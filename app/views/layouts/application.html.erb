@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Twitter</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <!-- <div class="nav_bar">
+    <button type="button" class="btn btn-default">
+      <span class="glyphicon glyphicon-home"></span>
+    </button>
+    <button type="button" class="btn btn-default">
+      <span class="glyphicon glyphicon-picture"></span>
+    </button>
+    <button type="button" class="btn btn-default">
+      <span class="glyphicon glyphicon-comment"></span>
+    </button>
+    <button type="button" class="btn btn-default">
+      <span class="glyphicon glyphicon-user"></span>
+    </button>
+  </div> -->
+
+<div class="app_nav">
+
+  <ul class="nav nav-pills">
+  <li>
+    <a href="index.html">
+      <span class="glyphicon glyphicon-home gi-4x"></span>
+    </a>
+  </li>
+  <li>
+    <a href="shop.html">
+      <span class="glyphicon glyphicon-picture gi-4x"></span>
+    </a>
+  </li>
+  <li>
+    <a href="about.html">
+      <span class="glyphicon glyphicon-comment gi-4x"></span>
+    </a>
+  </li>
+  <li>
+    <a href="about.html">
+      <span class="glyphicon glyphicon-user gi-4x"></span>
+    </a>
+  </li>
+</ul>
+
+</div>
+
+
+<%= yield %>
+
+</body>
+</html>

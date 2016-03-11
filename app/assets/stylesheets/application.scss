@@ -1,0 +1,32 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'welcome';
+
+$main_color: #2C3E50;
+$background: #95A5A6;
+$accents: #95A5A6;
+
+.gi-2x{font-size: 2em;}
+.gi-3x{font-size: 3em;}
+.gi-4x{font-size: 4em;}
+.gi-5x{font-size: 5em;}
+
+body {
+  background-color: $background;
+
+  .app_nav {
+    background-color: $main_color;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      span {
+            color: $accents;
+      }
+
+    }
+  }
+}
