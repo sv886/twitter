@@ -2,9 +2,9 @@
 @import 'bootstrap';
 @import 'welcome';
 
-$main_color: #2C3E50;
-$background: #95A5A6;
-$accents: #95A5A6;
+$main_color: #27AE60;
+$background: #ECF0F1;
+$accents: #C0392B;
 
 .gi-2x{font-size: 2em;}
 .gi-3x{font-size: 3em;}
@@ -13,6 +13,7 @@ $accents: #95A5A6;
 
 body {
   background-color: $background;
+  font-family: 'Walter Turncoat', cursive;
 
   .app_nav {
     background-color: $main_color;
@@ -23,10 +24,14 @@ body {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      align-items: center;
       span {
-            color: $accents;
+        color: $accents;
       }
-
+      .nav_text {
+        font-size: 30px;
+        color: $background;
+      }
     }
   }
 }
