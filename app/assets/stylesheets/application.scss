@@ -2,9 +2,9 @@
 @import 'bootstrap';
 @import 'welcome';
 
-$main_color: #27AE60;
+$main_color: #006847;
 $background: #ECF0F1;
-$accents: #C0392B;
+$accents: #CE1126;
 
 .gi-2x{font-size: 2em;}
 .gi-3x{font-size: 3em;}
@@ -12,11 +12,13 @@ $accents: #C0392B;
 .gi-5x{font-size: 5em;}
 
 body {
-  background-color: $background;
+  background-image: url(http://i.imgur.com/54ySG1B.png);
+  background-size: auto;
+  background-position: top;
   font-family: 'Walter Turncoat', cursive;
 
   .app_nav {
-    background-color: $main_color;
+    background-color: lighten($main_color, 0%);
     width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -25,7 +27,7 @@ body {
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      span {
+      i {
         color: $accents;
       }
       .nav_text {
