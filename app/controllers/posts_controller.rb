@@ -1,4 +1,12 @@
 class PostsController < ApplicationController
+  before_action do
+
+    @current_user = User.find_by id: session[:user_id]
+    if @current_user.blank?
+      redirect_to login_path
+    end
+  end
+
   def index
     @posts = Post.all
   end
