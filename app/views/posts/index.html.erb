@@ -1,2 +1,10 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <% @posts.each do |post| %>
+    <div class="tweet">
+      <h4><%= post.text %></h4>
+    </div>
+    </hr>
+      <% end %>
+  </div>
+</div>

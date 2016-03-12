@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new params.require(:user).permit( :username, :password, :password_confirmation)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_path
+      redirect_to posts_path
     else
       render :new
     end
