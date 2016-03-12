@@ -12,7 +12,7 @@ class RegisterTest < Capybara::Rails::TestCase
     click_button "Register User"
 
 
-    assert_content page, "Hola"
+    assert_content page, "Todos"
 
   end
 end
