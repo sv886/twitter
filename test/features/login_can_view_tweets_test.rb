@@ -10,7 +10,7 @@ class LoginCanViewTweetsTest < Capybara::Rails::TestCase
       fill_in "Password", with: "123"
       click_button "Log In"
 
-      assert_content page, "Hola"
+      assert_content page, "Todos"
       # save_and_open_page
     end
 end
