@@ -4,6 +4,6 @@ class User < ActiveRecord::Base
 
   has_many :posts
 
-  validates :username, :password_digest, presence: true
+  validates :username, :password, presence: true
 
 end

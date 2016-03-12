@@ -9,14 +9,14 @@
         <%= text_field_tag :username %>
       </div>
       <div class="">
-        <%= label_tag :password_digest %>
-        <%= password_field_tag :password_digest %>
+        <%= label_tag :password %>
+        <%= password_field_tag :password %>
       </div>
 
       <div class="session_buttons">
         <%= submit_tag "Log In", class: "btn btn-success" %>
         or
-        <%= link_to 'Register', class: "btn btn-default" %>
+        <%= link_to 'Register', register_path, class: "btn btn-default" %>
       </div>
   </div>
 

@@ -5,10 +5,10 @@ class SessionsController < ApplicationController
   def create
     # get user, validate pw, set session, then redirect
     username = params[:username]
-    password_digest = params[:password_digest]
+    password = params[:password]
 
     user = User.find_by username: username
-    if user && user.authenticate(password_digest)
+    if user && user.authenticate(password)
       session[:user_id] = user.id
       redirect_to root_path
     else
