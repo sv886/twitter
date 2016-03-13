@@ -12,4 +12,10 @@ class UsersController < ApplicationController
       render :new
     end
   end
+
+  # def timeline
+  #   follower_ids = following_users.pluck(:id)
+  #   all_ids = follower_ids << user.id
+  #   Post.where(user_id: all_ids).order("created_at DESC")
+  # end
 end

@@ -7,9 +7,8 @@
   <div class="row-fluid">
     <% @posts.each do |post| %>
     <div class="tweet">
-      <h4><%= post.text %></h4>
+      <h4><%= link_to post.text, post_path(id: post.id) %></h4>
     </div>
-    </hr>
       <% end %>
   </div>
 </div>

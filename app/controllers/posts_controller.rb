@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @posts = Post.all
+    @post = Post.find_by id: params[:id]
   end
 
   def edit
