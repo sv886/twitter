@@ -33,8 +33,14 @@
   </div>
 
   <li>
-    <%= link_to root_path, class: "button" do %>
-      <i class="glyphicon glyphicon-user gi-4x"></i>
+    <% if @current_user %>
+        <%= link_to user_path(username: @current_user.username), class: "button" do %>
+          <i class="glyphicon glyphicon-user gi-4x"></i>
+        <% end %>
+      <% else %>
+      <%= link_to posts_path, class: "button" do %>
+        <i class="glyphicon glyphicon-user gi-4x"></i>
+        <% end %>
     <% end %>
   </li>
 </ul>

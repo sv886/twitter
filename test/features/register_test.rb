@@ -9,6 +9,7 @@ class RegisterTest < Capybara::Rails::TestCase
     fill_in "Username", with: "juan"
     fill_in "Password", with: "123"
     fill_in "Password Confirmation", with: "123"
+    attach_file("Photo", "#{Rails.root}/test/fixtures/test.jpg")
     click_button "Register User"
 
 
