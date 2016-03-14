@@ -26,12 +26,16 @@ $accents: #CE1126;
     border-radius: 3px;
       .stache {
         position: absolute;
-        bottom: 30px;
-        right: 75px;
+        bottom: 95px;
+        right: 140px;
       }
   }
   .user_tweets {
     flex-direction: column;
     padding-left: 10px;
+    .tweet a{
+      text-decoration: none;
+      color: $accents;
+    }
   }
 }

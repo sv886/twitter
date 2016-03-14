@@ -1,6 +1,6 @@
 
 <div class="username_show">
-  <h1><%= @current_user.username %></h1>
+  <h1><%= @user.username %></h1>
 </div>
 
 
@@ -8,7 +8,7 @@
   <div class="user_photo_show">
     <%= image_tag attachment_url(@user, :photo, :fill, 400, 400, format: "jpg")%>
     <div class="stache">
-      <%= image_tag("http://www.icon100.com/up/3944/256/15-Thin-moustache.png")%>
+      <%= image_tag("http://image005.flaticon.com/1/png/128/31/31670.png")%>
     </div>
   </div>
 
@@ -18,7 +18,7 @@
       <hr>
       <% @user.posts.each do |post| %>
         <div class="tweet">
-            <h4><%= post.text %></h4>
+            <h4><%= link_to post.text, post_path(id: post.id) %> <%= distance_of_time_in_words post.created_at, Time.now %> ago</h4>
           <hr>
         </div>
       <% end %>
@@ -30,5 +30,7 @@
 <hr>
 
 <div class="logout">
+  <% if @current_user == @user %>
     <%= link_to "Salir", logout_path, class: "btn btn-default btn-block" %>
+  <% end %>
 </div>
