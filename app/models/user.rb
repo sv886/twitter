@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   acts_as_followable
   acts_as_follower
 
-  validates :username, :password, :photo, presence: true
+  validates :username, :password, presence: true
   attachment :photo
 
 end
