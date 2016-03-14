@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   get 'users/new' => 'users#new', as: :register
   post 'users' => 'users#create', as: :users
+  get 'users/:username' => 'users#show', as: :user
 
   get 'posts' => 'posts#index', as: :posts
   get 'posts/new' => 'posts#new', as: :new_post

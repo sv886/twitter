@@ -1,0 +1,14 @@
+<div class="username_show">
+  <%= @current_user.username %>
+</div>
+
+
+<div class="user-photo">
+  <%= image_tag attachment_url(@user, :photo, :fill, 400, 400, format: "jpg")%>
+  <hr>
+</div>
+
+
+<div class="logout">
+    <%= link_to "Salir", logout_path, class: "btn btn-default btn-block" %>
+</div>

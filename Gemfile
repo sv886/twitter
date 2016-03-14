@@ -56,3 +56,6 @@ end
 gem 'bootstrap-sass'
 
 gem "acts_as_follower"
+
+gem "refile", require: "refile/rails"
+gem "refile-mini_magick"
