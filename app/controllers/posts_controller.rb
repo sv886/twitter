@@ -28,6 +28,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new
     @post.text = params[:post][:text]
+    @post.user = @current_user
     if @post.save
       redirect_to posts_path
     else

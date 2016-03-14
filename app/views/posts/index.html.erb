@@ -1,14 +1,13 @@
-<div class="container-fluid">
+<div class="container">
 
-  <div class="posts_title">
-    <strong>Todos los Pinche Tweets</strong>
-  </div>
+  <h5><strong>Todos los Pinche Tweets</strong></h5>
 
   <div class="row-fluid">
     <% @posts.each do |post| %>
-    <div class="tweet">
-      <h4><%= link_to post.text, post_path(id: post.id) %></h4>
-    </div>
+      <div class="tweet">
+        <h4><%= link_to post.text, post_path(id: post.id) %></h4>
+      </div>
+      <hr>
       <% end %>
   </div>
 </div>
