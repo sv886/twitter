@@ -1,13 +1,27 @@
-<div class="container-fluid">
-
-  <div class="posts_title">
-    <strong>Dice: </strong>
-  </div>
-
-  <div class="row-fluid">
-    <div class="tweet">
-      <h4><%= @post.text %></h4>
+<div class="post_container">
+  <div class="tweet_container">
+    <div class="posts_photo">
+      <%= link_to user_path(@post.user.username) do %>
+        <i><%= image_tag attachment_url(@post.user, :photo, :fill, 400, 400, format: "jpg") %></i>
+      <% end %>
+      <div class="stache">
+        <%= image_tag("http://image005.flaticon.com/1/png/128/31/31670.png")%>
+      </div>
     </div>
-    </hr>
+
+    <div class="posts_title">
+      <strong><%= @post.user.username %> dijó: </strong>
+    </div>
+
+    <div class="show_container">
+      <div class="tweet">
+        <h7><%= @post.text %></h7>
+        <h4><%= distance_of_time_in_words @post.created_at, Time.now %> ago</h4>
+      </div>
+      <% if @current_user == @post.user %>
+        <%= link_to "Delete", post_path(id: @post.id), method: :delete, data: {confirm: "Delete Post?"}, class:"btn btn-danger" %>
+      <% end %>
+      </hr>
+    </div>
   </div>
 </div>

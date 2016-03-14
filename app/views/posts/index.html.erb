@@ -2,12 +2,25 @@
 
   <h5><strong>Todos los Pinche Tweets</strong></h5>
 
-  <div class="row-fluid">
-    <% @posts.each do |post| %>
+<% @posts.each do |post| %>
+  <div class="index_tweet">
+
+      <div class="avatar">
+        <%= link_to user_path(post.user.username) do %>
+          <i><%= image_tag attachment_url(post.user, :photo, :fill, 120, 120, format: "jpg") %></i>
+        <% end %>
+        <div class="avatar_stache">
+          <%= image_tag("http://www.da-files.com/communityrelations/contestbadges/moustache.png")%>
+        </div>
+      </div>
+
       <div class="tweet">
         <h4><%= link_to post.text, post_path(id: post.id) %></h4>
+        <div class="name">
+          <h4><%= link_to post.user.username, user_path(post.user.username) %> <%= distance_of_time_in_words post.created_at, Time.now %> ago</h4>
+        </div>
       </div>
       <hr>
-      <% end %>
   </div>
+  <% end %>
 </div>
