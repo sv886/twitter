@@ -1,13 +1,33 @@
+
 <div class="username_show">
-  <%= @current_user.username %>
+  <h1><%= @current_user.username %></h1>
 </div>
 
 
-<div class="user-photo">
-  <%= image_tag attachment_url(@user, :photo, :fill, 400, 400, format: "jpg")%>
-  <hr>
+<div class="profile_container">
+  <div class="user_photo_show">
+    <%= image_tag attachment_url(@user, :photo, :fill, 400, 400, format: "jpg")%>
+    <div class="stache">
+      <%= image_tag("http://www.icon100.com/up/3944/256/15-Thin-moustache.png")%>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="user_tweets">
+      <h4><strong>Historia de <%= @user.username %>:</strong></h4>
+      <hr>
+      <% @user.posts.each do |post| %>
+        <div class="tweet">
+            <h4><%= post.text %></h4>
+          <hr>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
 </div>
 
+<hr>
 
 <div class="logout">
     <%= link_to "Salir", logout_path, class: "btn btn-default btn-block" %>
