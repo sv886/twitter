@@ -11,9 +11,10 @@ Rails.application.routes.draw do
   get 'users/:username' => 'users#show', as: :user
 
   get 'users/:username/follow' => 'users#follow', as: :follow
-  get 'users/:username/unfollow' => 'users#unfollow', as: :unfollow
+  get 'users/:username/unfollow' => 'users#stop_following', as: :stop_following
+  get 'users/:username/timeline' => 'users#timeline', as: :timeline
   patch 'users/:username' => 'users#follow'
-  patch 'users/:username' => 'users#unfollow'
+  patch 'users/:username' => 'users#stop_following'
 
   get 'posts' => 'posts#index', as: :posts
   get 'posts/new' => 'posts#new', as: :new_post
