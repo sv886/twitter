@@ -23,6 +23,22 @@
   </div>
 
   <li>
+    <% if @current_user %>
+      <%= link_to timeline_path(username: @current_user.username), class: "button" do %>
+        <i class="glyphicon glyphicon-bullhorn gi-4x"></i>
+      <% end %>
+      <% else %>
+      <%= link_to posts_path, class: "button" do %>
+        <i class="glyphicon glyphicon-bullhorn gi-4x"></i>
+        <% end %>
+    <% end %>
+  </li>
+
+  <div class="nav_text">
+    PINCHE
+  </div>
+
+  <li>
     <%= link_to new_post_path, class: "button" do %>
       <i class="glyphicon glyphicon-comment gi-4x"></i>
     <% end %>

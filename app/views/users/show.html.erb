@@ -30,7 +30,7 @@
 
       <div class="unfollow">
         <% if @current_user != @user && @current_user.following?(@user) == true %>
-          <%= link_to "Unfollow", unfollow_path, class: "btn btn-default btn" %>
+          <%= link_to "Unfollow", stop_following_path, class: "btn btn-default btn" %>
         <% end %>
       </div>
     </div>
