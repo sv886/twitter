@@ -24,13 +24,13 @@
       <% end %>
       <div class="follow">
         <% if @current_user != @user && @current_user.following?(@user) == false  %>
-          <%= link_to "Follow", posts_path, class: "btn btn-default btn" %>
+          <%= link_to "Follow", follow_path, class: "btn btn-default btn" %>
         <% end %>
       </div>
 
       <div class="unfollow">
         <% if @current_user != @user && @current_user.following?(@user) == true %>
-          <%= link_to "Unfollow", posts_path, class: "btn btn-default btn" %>
+          <%= link_to "Unfollow", unfollow_path, class: "btn btn-default btn" %>
         <% end %>
       </div>
     </div>
