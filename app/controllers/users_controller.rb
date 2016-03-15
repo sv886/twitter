@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     if @current_user.present?
       @current_user.follow(@user)
     end
-    redirect_to posts_path
+    redirect_to user_path(username: params[:username])
   end
 
   def unfollow
@@ -41,8 +41,8 @@ class UsersController < ApplicationController
     user_id = session[:user_id]
     @current_user = User.find_by id: user_id
     if @current_user.present?
-      @current_user.unfollow(@user)
+      @current_user.stop_following(@user)
     end
-    redirect_to posts_path
+    redirect_to user_path(username: params[:username])
   end
 end
