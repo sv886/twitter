@@ -19,6 +19,7 @@
         <h4><%= distance_of_time_in_words @post.created_at, Time.now %> ago</h4>
       </div>
       <% if @current_user == @post.user %>
+        <%= link_to "Update", edit_post_path(id: @post.id), class:"btn btn-default" %>
         <%= link_to "Delete", post_path(id: @post.id), method: :delete, data: {confirm: "Delete Post?"}, class:"btn btn-danger" %>
       <% end %>
       </hr>

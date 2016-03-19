@@ -16,9 +16,19 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @post = Post.find_by id: params[:id]
   end
 
   def update
+    @post = Post.find_by id: params[:id]
+    @post.text = params[:post][:text]
+    if @post.user.id == session[:user_id]
+      if @post.save
+        redirect_to post_path(id: @post.id)
+      else
+        render :edit
+      end
+    end
   end
 
   def new
